@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">DvNotes</string>
+
+    <!-- Note View -->
+    <string name="note_title">Title</string>
+    <string name="note_content">Content</string>
+    <string name="note_tag">Tag</string>
+    <string name="note_task">Task</string>
+    <string name="note_create_date">Created Date</string>
+    <string name="note_start_date">Start Date</string>
+    <string name="note_start_hour">Start Hour</string>
+    <string name="note_final_date">Final Date</string>
+    <string name="note_final_hour">Final Hour</string>
+    <string name="note_completed">Completed</string>
+    <string name="note_notify">Notify</string>
+
+    <!-- Title View -->
+    <string name="title_about">About the app</string>
+    <string name="title_about_description">This app is a practice about how to use the concepts ilearned in android course. (DataBinding, Navigation Component, MvvM and LiveData)</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/BaseShop" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CourtCounter" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CustomRecyclerView" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FireBaseDemo 3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/FragmentsDemo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Fundamentals/AboutMeDataBinding" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Fundamentals/andfun-kotlin-android-trivia-starter-code" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Fundamentals/andfun-kotlin-dessert-pusher-starter-code" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Fundamentals/andfun-kotlin-guess-it-starter-code" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/JustJava" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LoginMvpDemo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/PracticeAndroid" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/RecyclerViewDemo" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/happyBirthdayCard" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/picappassengerandroid" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tasks" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tasks/dav4android" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/tasks/ical4android" vcs="Git" />
+  </component>
+</project>
