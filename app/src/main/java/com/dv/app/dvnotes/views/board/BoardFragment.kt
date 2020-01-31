@@ -1,21 +1,26 @@
 package com.dv.app.dvnotes.views.board
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.dv.app.dvnotes.R
+import com.dv.app.dvnotes.databinding.BoardFragmentBinding
 import com.dv.app.dvnotes.dto.NoteDto
-import com.dv.app.dvnotes.views.note.NoteFragment
+import com.dv.app.dvnotes.interfaces.RecyclerItemClickListener
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
-class BoardFragment : Fragment(){
+class BoardFragment : Fragment(), RecyclerItemClickListener{
 
     private lateinit var noteList : RecyclerView
+    private lateinit var binding : BoardFragmentBinding
+
     private val data = mutableListOf(
         NoteDto( "1", "Note 1", "Daniel1 Daniel1 Daniel1 Daniel1 Daniel1, Daniel1.", "", "f","21/01/2020", "","","","","f","f"),
         NoteDto( "2", "Note 2", "Anyi2 Anyi2 Anyi2 Anyi2 Anyi2, Anyi2.", "","f","21/01/2020", "","","","","f", "f"),
@@ -33,19 +38,40 @@ class BoardFragment : Fragment(){
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate( R.layout.board_fragment, container, false)
+        binding = DataBindingUtil.inflate(
+            inflater, R.layout.board_fragment, container, false )
 
-        noteList = view.findViewById( R.id.note_list )
+        noteList = binding.root.findViewById( R.id.note_list )
         noteList.layoutManager = LinearLayoutManager( context )
-        noteList.adapter = BoardAdapter( data )
+        noteList.adapter = BoardAdapter( data, this )
 
-        val fab = view.findViewById<FloatingActionButton>( R.id.add_button )
-        fab.setOnClickListener {
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace( R.id.container_fragment, NoteFragment() )
-            transaction?.commit()
-        }
+        val fab = binding.root.findViewById<FloatingActionButton>( R.id.add_button )
+        fab.setOnClickListener(
+            Navigation.createNavigateOnClickListener( R.id.action_boardFragment_to_noteFragment )
+        )
 
-        return view
+        setHasOptionsMenu( true )
+
+        return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?, inflater: MenuInflater?) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater!!.inflate( R.menu.overflow_menu , menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        return NavigationUI.onNavDestinationSelected(
+            item!!, this.findNavController()
+        ) || super.onOptionsItemSelected(item)
+    }
+
+    override fun onRecItemClicked(note: NoteDto ) {
+        binding.root.findNavController().navigate(
+            BoardFragmentDirections.actionBoardFragmentToNoteFragment(
+                note.title.toString(),
+                note.content.toString()
+            )
+        )
     }
 }

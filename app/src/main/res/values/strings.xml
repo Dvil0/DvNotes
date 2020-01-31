@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">DvNotes</string>
+    <string name="notes">Notes</string>
+    <string name="update">Note</string>
+    <string name="about">About</string>
 
     <!-- Note View -->
     <string name="note_title">Title</string>
